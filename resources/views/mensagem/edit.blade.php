@@ -18,7 +18,7 @@
 	{{ csrf_field() }}
 	{{ method_field('PUT') }}
 	Título: 		<input type="text" name="title" value="{{$mensagem->title}}"> 	     <br>
-	Descrição:		<input type="text" name="text" value="{{$mensagem->text}}">   <br>
+	Descrição:		<input type="text" name="texto" value="{{$mensagem->texto}}">   <br>
 	Autor:		<input type="text" name="autor" value="{{$mensagem->autor}}">   <br>
 	<input type="submit" value="Salvar">
 </form>

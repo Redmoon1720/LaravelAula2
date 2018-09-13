@@ -39,12 +39,12 @@ class Mensagemcontroller extends Controller
     {
         $messages = array(
             'title.required' => 'É obrigatório um título para a mensagem',
-            'text.required' => 'É obrigatório uma descrição para a mensagem',
+            'texto.required' => 'É obrigatório uma descrição para a mensagem',
             'autor.required' => 'É obrigatório um autor para a mensagem',
         );
         $regras = array(
             'title' => 'required|string|max:255',
-            'text' => 'required',
+            'texto' => 'required',
             'autor' => 'required',
         );
         $validador = Validator::make($request->all(), $regras, $messages);
@@ -55,7 +55,7 @@ class Mensagemcontroller extends Controller
         }
         $obj_Atividade = new mensagem();
         $obj_Atividade->title = $request['title'];
-        $obj_Atividade->text = $request['text'];
+        $obj_Atividade->texto = $request['texto'];
         $obj_Atividade->autor = $request['autor'];
         $obj_Atividade->save();
 
@@ -99,13 +99,13 @@ class Mensagemcontroller extends Controller
         //vetor com as mensagens de erro
         $messages = array(
             'title.required' => 'É obrigatório um título para a mensagem',
-            'text.required' => 'É obrigatória uma descrição para a mensagem',
+            'texto.required' => 'É obrigatória uma descrição para a mensagem',
             'autor.required' => 'É obrigatório um autor para a mensagem',
         );
         //vetor com as especificações de validações
         $regras = array(
             'title' => 'required|string|max:255',
-            'text' => 'required',
+            'texto' => 'required',
             'autor' => 'required',
         );
         //cria o objeto com as regras de validação
@@ -119,7 +119,7 @@ class Mensagemcontroller extends Controller
         //se passou pelas validações, processa e salva no banco...
         $obj_atividade = mensagem::findOrFail($id);
         $obj_atividade->title =       $request['title'];
-        $obj_atividade->text = $request['text'];
+        $obj_atividade->texto = $request['texto'];
         $obj_atividade->autor = $request['autor'];
         $obj_atividade->save();
         return redirect('/mensagem')->with('success', 'Mensagem alterada com sucesso!!');
